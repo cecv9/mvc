@@ -7,7 +7,7 @@
 <body>
 <!-- Botón para ir al formulario de nuevo registro -->
 <form action="index.php" method="GET"> <!-- Es mejor usar GET para navegar -->
-  <input type="hidden" name="controlador" value="usuarios" />
+  <input type="hidden" name="controlador" value="usuario" />
   <input type="hidden" name="accion" value="mostrarUsuario"/>
   <input type="submit" value="Nuevo Usuario" />
 </form>
@@ -31,7 +31,8 @@
   <?php
             // ¡CAMBIO CLAVE! Usamos la variable $usuarios que nos pasó el controlador.
             // Ya no usamos $this->consultarTodo().
-  foreach($usuarios as $usuario): ?>
+	  //$usuarios=[];
+	  foreach($usuarios as $usuario): ?>
   <tr>
     <!-- Ahora usamos los getters del objeto Usuario para más seguridad y encapsulamiento -->
     <td><?php echo htmlspecialchars($usuario->getNombre()); ?></td>

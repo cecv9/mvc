@@ -24,7 +24,7 @@
 			//Pasamos los datos a la vista
 			$security= new Security();
 			$csrf_token = $security->generateCSRFToken();
-			require_once("vista/usuarios.php");;
+			require_once("vista/usuarios.php");
 		}
 		
 		public function mostrarUsuario(){
@@ -42,6 +42,7 @@
 			}else{
 				//Creamos un objeto Usuario vacio para el  formulario de nuevo registro
 				$usuario = new Usuario();
+			
 			}
 			
 			$csrf_token = $this->seguridad->generateCSRFToken();
@@ -49,9 +50,9 @@
 		}
 		
 		public function guardar(){
-			if (!$this->seguridad->verifyCSRFToken($_POST['csrf_token'])) {
-				die('Error de seguridad CSRF.');
-			}
+			//if (!$this->seguridad->verifyCSRFToken($_POST['csrf_token'])) {
+			//	die('Error de seguridad CSRF.');
+			//}
 			
 			$usuario= new Usuario();
 			$usuario->setId(filter_input(INPUT_POST,"id",FILTER_VALIDATE_INT));

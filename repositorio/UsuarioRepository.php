@@ -68,8 +68,9 @@
 		
 		public function save(Usuario $usuario): void {
 			if ($usuario->getId() > 0) {
-				$sql = "UPDATE usuarios SET nombre = ?, apellido = ?, telefono = ?, edad = ? WHERE id = ?";
+				$sql = "UPDATE usuarios SET id = ? , nombre = ?, apellido = ?, telefono = ?, edad = ? WHERE id = ?";
 				$params = [
+					$usuario->getId(),
 					$usuario->getNombre(),
 					$usuario->getApellido(),
 					$usuario->getTelefono(),
@@ -77,8 +78,9 @@
 					$usuario->getId()
 				];
 			} else {
-				$sql = "INSERT INTO usuarios (nombre, apellido, telefono, edad) VALUES (?, ?, ?, ?)";
+				$sql = "INSERT INTO usuarios (id,nombre, apellido, telefono, edad) VALUES (?,?, ?, ?, ?)";
 				$params = [
+					$usuario->getId(),
 					$usuario->getNombre(),
 					$usuario->getApellido(),
 					$usuario->getTelefono(),

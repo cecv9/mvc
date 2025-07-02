@@ -1,8 +1,8 @@
 <?php
 	namespace  core;
 	
-	use \PDO;
-	use \PDOException;
+	use PDO;
+	use PDOException;
 	
 	class Conexion{
 	

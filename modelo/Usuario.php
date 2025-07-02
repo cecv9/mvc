@@ -4,28 +4,21 @@
 	//YA NO NECESITAMOS HEREDAR NADA
 	class Usuario{
 		
-		private int $id;
-		private string $nombre;
-		private string $apellido;
-		private string $telefono;
-		private int $edad;
+		private int $id=0;
+		private string $nombre="";
+		private string $apellido="";
+		private string $telefono="";
+		private int $edad=0;
 		
 		// El constructor ahora puede estar vacío o no existir,
 		// ya que PDO::FETCH_CLASS lo puede manejar.
+		public function __construct() {}
 		
-		public function __construct(
-			int $id = 0,
-			string $nombre = "",
-			string $apellido = "",
-			string $telefono = "",
-			int $edad = 0
-		) {
-			// Inicializamos valores por defecto
-			$this->id = 0;
-			$this->nombre = "";
-			$this->apellido = "";
-			$this->telefono = "";
-			$this->edad = 0;
+		public function __set($name, $value) {
+			// Verifica si la propiedad existe en esta clase antes de asignarla.
+			if (property_exists($this, $name)) {
+				$this->$name = $value;
+			}
 		}
 		
 		
