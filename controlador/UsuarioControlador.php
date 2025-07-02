@@ -1,21 +1,15 @@
 <?php
 	
 	
-	namespace usuario;
-	namespace modelo;
 	namespace controlador;
-	namespace core;
-	namespace seguridad;
-	namespace repositorio;
-	namespace vista;
 	
+	use repositorio\UsuarioRepository;
 	use modelo\Usuario;
-	use UsuarioRepository;
-	use Security;
+	use core\Security; // <--- ¡CAMBIO AQUÍ! De 'seguridad' a 'core
 	
 	class UsuarioControlador{
 		
-		private \UsuarioRepository $repository; //Composicion
+		private UsuarioRepository $repository; //Composicion
 		private Security $seguridad; // Temporal para CSRF
 		
 		public function __construct(){

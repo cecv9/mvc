@@ -1,9 +1,15 @@
 <?php
-	//Incluimos las clases que vamos a usar (no heredar)
-	use modelo\Usuario;
 	
-	require_once("core/conexion.php");
-	require_once (modelo/usuario.php);
+	
+	namespace repositorio;
+	namespace  core;
+	
+	use core\Conexion;
+	use modelo\Usuario;
+	use PDO;
+	
+	//Incluimos las clases que vamos a usar (no heredar)
+	
 	
 	class UsuarioRepository{
 		
@@ -14,8 +20,8 @@
 		
 		public function __construct(){
 			//Creamos una instancia del conector y obtenemos el obejeto PDO
-			$conector = new conexion();
-			$this->pdo = $conector->conexion();
+			$conector = new Conexion();
+			$this->pdo = $conector->Conexion();
 		}
 		
 		
