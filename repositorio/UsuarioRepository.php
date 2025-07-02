@@ -13,9 +13,9 @@
 	
 	class UsuarioRepository{
 		
-		private PDO $pdo; //La propiedad para guardar la conexion
+		private PDO $pdo; //La propiedad para guardar la conexion.
 		
-		//Composicion ! en lugar de heredar , recibimos la conexion
+		//Composicion ! en lugar de heredar , recibimos la conexion.
 		
 		
 		public function __construct(){
