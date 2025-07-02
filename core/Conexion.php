@@ -1,6 +1,9 @@
 <?php
 	namespace  core;
 	
+	use \PDO;
+	use \PDOException;
+	
 	class Conexion{
 	
 		public string  $driver;
@@ -27,12 +30,14 @@
 		}
 		
 		
-		public function conexion(){
+		public function Conexion(){
 			
 			try {
 				$dns="$this->driver:host=$this->host;dbname=$this->database;charset=$this->charset";
 				
 				$pdo=new PDO($dns,$this->user,$this->password);
+				
+				return $pdo;
 				
 			}catch (pdoException $mensaje){
 				throw new Exception("Errror de conexion".$mensaje->getMessage());

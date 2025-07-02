@@ -2,7 +2,7 @@
 	
 	
 	namespace repositorio;
-	namespace  core;
+	
 	
 	use core\Conexion;
 	use modelo\Usuario;

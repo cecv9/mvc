@@ -20,7 +20,7 @@
   <tr>
     <?php
                 // Esta parte puede quedarse si 'usuarioColumns' es una constante global.
-                require_once "../core/constantes.php";
+                require_once "core/constantes.php";
                 foreach(usuarioColumns as $column):?>
     <th><?php echo htmlspecialchars($column); ?></th>
     <?php endforeach; ?>
